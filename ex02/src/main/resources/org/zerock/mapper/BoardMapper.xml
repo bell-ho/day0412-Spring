@@ -21,7 +21,7 @@
 
 		<selectKey keyProperty="bno" order="BEFORE"
 			resultType="long">
-			select seq_board.nextval from dual
+			select seq_board02.nextval from dual
 		</selectKey>
 		<!-- 키를 미리 지정해두고 성공시 전해준다 -->
 

@@ -2,7 +2,7 @@ package org.zerock.mapper;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired;import org.springframework.stereotype.Service;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.zerock.domain.BoardVo;
@@ -43,7 +43,7 @@ public class BoardMapperTests {
 	public void testDelete() {
 		log.info("delete count: "+mapper.delete(3L));
 	}
-	@Test
+//	@Test
 	public void testUpdate() {
 		BoardVo board = new BoardVo();
 		
