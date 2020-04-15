@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="BoardServiceTests" project="ex02" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="org.zerock.service.BoardServiceTests.BoardServiceTests" time="0.25">
-    <testcase name="testeDelete" classname="org.zerock.service.BoardServiceTests.BoardServiceTests" time="0.143"/>
-    <testcase name="testUpdate" classname="org.zerock.service.BoardServiceTests.BoardServiceTests" time="0.107"/>
-  </testsuite>
-</testrun>

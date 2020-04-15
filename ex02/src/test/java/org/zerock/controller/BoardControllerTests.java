@@ -34,7 +34,7 @@ public class BoardControllerTests {
 		System.out.println("여기까지 실행됨1");
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build();
 	}
-//	@Test
+	@Test
 	public void testList() throws Exception{
 		System.out.println("여기까지 실행됨2");
 		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/board/list"))
@@ -44,7 +44,7 @@ public class BoardControllerTests {
 				.getModelMap()
 				);
 	}
-//	@Test
+	@Test
 	public void testRegister()throws Exception{
 		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/register")
 				.param("title", "테스트 새글 제목")
@@ -55,7 +55,7 @@ public class BoardControllerTests {
 		log.info(resultPage);
 	}
 	
-//	@Test
+	@Test
 	public void testGet() throws Exception{
 		log.info(mockMvc.perform(MockMvcRequestBuilders
 				.get("/board/get")
@@ -63,7 +63,7 @@ public class BoardControllerTests {
 				.andReturn()
 				.getModelAndView().getModelMap());
 	}
-//	@Test
+	@Test
 	public void testModify()throws Exception{
 		String resultPage = mockMvc
 				.perform(MockMvcRequestBuilders.post("/board/modify")

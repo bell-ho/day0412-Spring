@@ -19,13 +19,13 @@ public class BoardServiceTests {
 	@Setter(onMethod_ =@Autowired )
 	private BoardService service;
 	
-//	@Test
+	@Test
 	public void testExist() {
 		log.info(service);
 		assertNotNull(service);
 		System.out.println("객체주입됨");
 	}
-//	@Test
+	@Test
 	public void testRegister() {
 		
 		BoardVo board = new BoardVo();
@@ -38,11 +38,11 @@ public class BoardServiceTests {
 		log.info("생성된 게시물의 번호: "+board.getBno());
 		System.out.println("생성된 게시물의 번호 생성된 게시물의 번호 생성된 게시물의 번호 생성된 게시물의 번호");
 	}
-//	@Test
+	@Test
 	public void testGetList() {
 		service.getList().forEach(board -> log.info(board));
 	}
-//	@Test
+	@Test
 	public void testGet() {
 		log.info(service.get(1L));
 	}

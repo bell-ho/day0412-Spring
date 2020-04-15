@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="maven-compile"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="maven-compile"/>
-			<item value="servlet"/>
-			<item value="junit"/>
-			<item value="file"/>
-			<item value="commons-file"/>
-			<item value="commons"/>
-			<item value="javax.ser"/>
-			<item value="maven-com"/>
-			<item value="javax-ser"/>
-			<item value="javax"/>
-			<item value="maven"/>
-			<item value="spring=tx"/>
+			<item value="board/form"/>
+			<item value="#modify"/>
+			<item value="/board/form"/>
+			<item value="calss"/>
+			<item value="class"/>
+			<item value="updateDate"/>
+			<item value="update"/>
+			<item value="values"/>
+			<item value="fmt"/>
+			<item value="fml"/>
+			<item value="get?"/>
+			<item value="regBtn"/>
+			<item value="myModal"/>
+			<item value="panel-heading"/>
+			<item value="var result"/>
 		</list>
 		<list key="replacehistory">
+			<item value="value"/>
+			<item value="/resources/"/>
+			<item value="/ressource"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1457"/>
-		<item key="DIALOG_Y_ORIGIN" value="148"/>
+		<item key="DIALOG_X_ORIGIN" value="165"/>
+		<item key="DIALOG_Y_ORIGIN" value="258"/>
 		<item key="DIALOG_WIDTH" value="310"/>
 		<item key="DIALOG_HEIGHT" value="434"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|10.5|0|WINDOWS|1|-14|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
