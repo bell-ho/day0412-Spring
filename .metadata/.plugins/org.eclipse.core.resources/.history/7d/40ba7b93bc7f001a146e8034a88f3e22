@@ -1,0 +1,22 @@
+package org.zerock.domain;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+
+public class Criteria { //검색기준
+	private int pagenum;
+	private int amount;
+	
+	public Criteria() {
+		this(1,10);
+	}
+	public Criteria(int pagenum,int amount) {
+		this.pagenum = pagenum;
+		this.amount = amount;
+	}
+}
