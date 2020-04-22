@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="form id"/>
+		<item key="selection" value="readonly"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="form id"/>
-			<item value="board.bno"/>
-			<item value="class=&apos;move&apos;"/>
-			<item value="board.title"/>
-			<item value="paginate_button"/>
-			<item value="board/form"/>
-			<item value="#modify"/>
-			<item value="/board/form"/>
-			<item value="calss"/>
-			<item value="class"/>
-			<item value="updateDate"/>
-			<item value="update"/>
-			<item value="values"/>
-			<item value="fmt"/>
-			<item value="fml"/>
+			<item value="readonly"/>
+			<item value="1"/>
+			<item value="href"/>
+			<item value="boardRegister"/>
+			<item value="footer"/>
+			<item value="panel"/>
+			<item value="pannel"/>
+			<item value="pannel-footer"/>
+			<item value="function showList(page)"/>
+			<item value="modalRegi"/>
+			<item value="replyPAgeFoo"/>
+			<item value="showList(pageNum);"/>
+			<item value="var pageNum"/>
+			<item value="showReplyPage"/>
+			<item value="showReplyPAge"/>
 		</list>
 		<list key="replacehistory">
 			<item value="value"/>
@@ -31,8 +31,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="233"/>
-		<item key="DIALOG_Y_ORIGIN" value="566"/>
+		<item key="DIALOG_X_ORIGIN" value="785"/>
+		<item key="DIALOG_Y_ORIGIN" value="542"/>
 		<item key="DIALOG_WIDTH" value="310"/>
 		<item key="DIALOG_HEIGHT" value="434"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|10.5|0|WINDOWS|1|-14|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

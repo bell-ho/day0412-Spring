@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=ex02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;org.zerock.service{BoardService.java[BoardService" modifiers="513" timestamp="1586691685110"/>
+<typeInfo handle="=ex02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;org.zerock.service{BoardService.java[BoardService" modifiers="513" timestamp="1587035727391"/>
+<typeInfo handle="=ex03/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;org.zerock.service{ReplyService.java[ReplyService" modifiers="513" timestamp="1587373301655"/>
 </typeInfoHistroy>
