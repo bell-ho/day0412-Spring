@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
 <typeInfo handle="=ex02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;org.zerock.service{BoardService.java[BoardService" modifiers="513" timestamp="1587035727391"/>
-<typeInfo handle="=ex03/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;org.zerock.service{ReplyService.java[ReplyService" modifiers="513" timestamp="1587373301655"/>
+<typeInfo handle="=ex03/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;org.zerock.service{ReplyService.java[ReplyService" modifiers="513" timestamp="1587445899787"/>
+<typeInfo handle="=ex04/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;org.zerock.service{SampleService.java[SampleService" modifiers="513" timestamp="1587541789825"/>
+<typeInfo handle="=ex04/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;org.zerock.mapper{Sample1Mapper.java[Sample1Mapper" modifiers="513" timestamp="1587544459016"/>
+<typeInfo handle="=ex04/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;org.zerock.mapper{Sample2Mapper.java[Sample2Mapper" modifiers="513" timestamp="1587544491652"/>
+<typeInfo handle="=ex04/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;org.zerock.service{SampleTxService.java[SampleTxService" modifiers="513" timestamp="1587544659538"/>
 </typeInfoHistroy>
