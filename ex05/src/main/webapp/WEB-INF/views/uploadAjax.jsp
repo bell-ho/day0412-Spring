@@ -5,6 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+<div class='bigPictureWrapper'>
+	<div class='bigPicture'>
+	</div>
+</div>
+
 <style type="text/css">
 
  	.uploadResult{
@@ -72,28 +78,37 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 		crossorigin="anonymous"></script>
-
 <script>
-
-function showImage(fileCallPath){
-// 	alert(fileCallPath);
-
-	$(".bigPictureWrapper").on("click",function(e){
-		$(".bigPicture").animate({width:"0%", height: '0%'}, 1000);
-		setTimeout(function(){
-			$('.bicPictureWrapper').hide();
-		}, 1000);
-	});
-
-// 	$(".bigPicture")
-// 	.html("<img src='/display?fileName=" encodeURI(fileCallPath)+"'>").animate({width:'100%', height:  '100%'}, 1000);
-}
-
 $(document).ready(function() {
+
+$(".uploadResult").on("click", "span" , function(e){
+
+// 	console.log("delete file");
+
+	var targetFile = $(this).data("file");
+	var type = $(this).data("type");
+	console.log(targetFile);
+	
+
+	$.ajax({
+		url: '/deleteFile',
+		data: {fileName: targetFile, type:type},
+		dataType:'text',
+		type:'POST',
+		success: function(result){
+			alert(result);
+// 			targetLi.remove();
+		}
+	})
+})
+
+
+
 	
 var uploadResult = $(".uploadResult ul");
 	
 	function showUploadedFile(uploadResultArr){
+
 		
 		var str = "";
 
@@ -188,6 +203,22 @@ $("#uploadBtn").on("click",function(e) {
 
 		});
 	});
+
+
+
+function showImage(fileCallPath){
+// 	alert(fileCallPath);
+
+	$(".bigPictureWrapper").on("click",function(e){
+		$(".bigPicture").animate({width:'0%',height:'0%'},1000);
+		setTime(() => {
+			$(this).hide();
+			},1000);
+	});
+}
+
+
+
 </script>
 </body>
 </html>

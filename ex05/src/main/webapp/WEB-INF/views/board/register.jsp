@@ -4,7 +4,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <%@include file="../includes/header.jsp"%>
-<style type="text/css">
+<div class="row">
+	<div class="col-lg-12">
+		<h1 class="page-header">Board Register</h1>
+	</div>
+	<!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+
+
+<style>
 .uploadResult {
 	width: 100%;
 	background-color: gray;
@@ -20,49 +29,33 @@
 .uploadResult ul li {
 	list-style: none;
 	padding: 10px;
-	alian-content: center;
-	text-align: center;
 }
 
 .uploadResult ul li img {
 	width: 100px;
 }
+</style>
 
-.uploadResult ul li span {
-	color: white;
-}
-
+<style>
 .bigPictureWrapper {
-	position: absolute;
-	display: none;
-	justify-content: center;
-	align-items: center;
-	top: 0%;
-	width: 100%;
-	height: 100%;
-	background-color: gray;
-	z-index: 100;
-	background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top:0%;
+  width:100%;
+  height:100%;
+  background-color: gray; 
+  z-index: 100;
 }
 
 .bigPicture {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.bigPicture img {
-	width: 600px;
+  position: relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
-<div class="row">
-	<div class="col-lg-12">
-		<h1 class="page-header">Board Register</h1>
-	</div>
-	<!-- /.col-lg-12 -->
-</div>
-<!-- /.row -->
 
 <div class="row">
 	<div class="col-lg-12">
@@ -86,8 +79,7 @@
 						<label>Writer</label> <input class="form-control" name="writer">
 					</div>
 
-					<button type="submit" class="btn btn-default">Submit
-						Button</button>
+					<button type="submit" class="btn btn-default">Submit Button</button>
 					<button type="reset" class="btn btn-default">Reset Button</button>
 				</form>
 
@@ -129,69 +121,34 @@
 <!-- /.row -->
 
 <script>
+$(document).ready(function(e) {
 
-$(".uploadResult").on("click", "button" , function(e){
+	var formObj = $("form[role='form']");
 
-	console.log("delete file");
+	$("button[type='submit']").on("click", function(e) {
 
-	var targetFile = $(this).data("file");
-	var type = $(this).data("type");
+		e.preventDefault();
 
-	var type = $(this).data("type");
+		console.log("submit clicked");
 
-	var targetLi = $(this).closest("li");
+		var str = "";
 
-	$.ajax({
-		url: '/deleteFile',
-		data: {fileName: targetFile, type:type},
-		dataType:'text',
-		type:'POST',
-		success: function(result){
-			alert(result);
-			targetLi.remove();
-		}
-	})
-})
+		$(".uploadResult ul li").each(function(i,obj){
 
-function showUploadedFile(uploadResultArr){
+			var jobj = $(obj);
 
-	if(!uploadResultArr || uploadResultArr.lenth == 0){return;}
-	
-	var uploadResult = $(".uploadResult ul");
-	
-	var str = "";
+			console.dir(jobj);
 
-	$(uploadResultArr).each(function(i, obj){
-
-		 //image type
-		 if(obj.image){
-	          var fileCallPath =  encodeURIComponent( obj.uploadPath+ "/s_"+obj.uuid +"_"+obj.fileName);
-	          str += "<li data-path='"+obj.uploadPath+"'";
-	          str +=" data-uuid='"+obj.uuid+"'data-filename='"+obj.fileName+"'data-type='"+obj.image+"'"
-	          str +="><div>";
-	          str += "<span> "+ obj.fileName+"</span>";
-	          str += "<button type='button' data-file=\'"+fileCallPath+"\' data-type='image' class='btn btn-warning btn-circle'><i class='fa fa-times'></i></button><br>";
-	          str += "<img src='/display?fileName="+fileCallPath+"'>";
-	          str += "</div>";
-	          str +"</li>";
-
-	          
-	        }else{
-	          var fileCallPath =  encodeURIComponent( obj.uploadPath+"/"+ obj.uuid +"_"+obj.fileName);            
-	            var fileLink = fileCallPath.replace(new RegExp(/\\/g),"/");
-
-	          str +="<li"
-		      str +="data-path='"+obj.uploadPath+"' data-uuid='"+obj.uuid+"'data-filename='"+obj.fileName+"' data-type='"+obj.image+"'><div>";
-	          str += "<span> "+ obj.fileName+"</span>";
-	          str += "<button type='button' data-file=\'"+fileCallPath+"\' data-type='file' class='btn btn-warning btn-circle'><i class='fa fa-times'></i></button><br>";
-	          str += "<img src='/resources/img/attach.png'></a>";
-	          str += "</div>";
-	          str +"</li>";
-		}
+			 str += "<input type='hidden' name='attachList["+i+"].fileName' value='"+jobj.data("filename")+"'>";
+		     str += "<input type='hidden' name='attachList["+i+"].uuid' value='"+jobj.data("uuid")+"'>";
+		     str += "<input type='hidden' name='attachList["+i+"].uploadPath' value='"+jobj.data("path")+"'>";
+		     str += "<input type='hidden' name='attachList["+i+"].fileType' value='"+ jobj.data("type")+"'>";
+		      
+		});
+		
+		formObj.append(str).submit();
+		
 	});
-
-	uploadResult.append(str);
-}
 
 	var regex = new RegExp("(.*?)\.(exe|sh|zip|alz)$");
 	var maxSize = 5242880;
@@ -217,7 +174,7 @@ function showUploadedFile(uploadResultArr){
 
 		var files = inputFile[0].files;
 
-		console.log(files);
+// 		console.log(files);
 
 		//파일추가
 		for (var i = 0; i < files.length; i++) {
@@ -233,28 +190,83 @@ function showUploadedFile(uploadResultArr){
 			url : '/uploadAjaxAction',
 			processData : false,
 			contentType : false,
-			data : formData,
-			type : 'POST',
+			data:formData,type : 'POST',
 			dataType : 'json',
 			success : function(result) {
 				console.log(result);
-
-				showUploadedFile(result);
-
+				showUploadResult(result);
 
 			}
 		}); //$.ajax
 	});
 	
-$(document).ready(function(e) {
-	var formobj = $("form[role='form']");
+	function showUploadResult(uploadResultArr){
 
-	$("button[type='submit']").on("click", function(e) {
+		if(!uploadResultArr || uploadResultArr.lenth == 0){return;}
+		
+		var uploadResult = $(".uploadResult ul");
+		
+		var str = "";
 
-		e.preventDefault();
+		$(uploadResultArr).each(function(i, obj){
 
-		console.log("submit clicked");
+			 //image type
+			if(obj.image){
+				var fileCallPath =  encodeURIComponent( obj.uploadPath+ "/s_"+obj.uuid +"_"+obj.fileName);
+				str += "<li data-path='"+obj.uploadPath+"'";
+				str +=" data-uuid='"+obj.uuid+"' data-filename='"+obj.fileName+"' data-type='"+obj.image+"'"
+				str +" ><div>";
+				str += "<span> "+ obj.fileName+"</span>";
+				str += "<button type='button' data-file=\'"+fileCallPath+"\' "
+				str += "data-type='image' class='btn btn-warning btn-circle'><i class='fa fa-times'></i></button><br>";
+				str += "<img src='/display?fileName="+fileCallPath+"'>";
+				str += "</div>";
+				str +"</li>";
+			}else{
+				var fileCallPath =  encodeURIComponent( obj.uploadPath+"/"+ obj.uuid +"_"+obj.fileName);			      
+			    var fileLink = fileCallPath.replace(new RegExp(/\\/g),"/");
+			      
+				str += "<li "
+				str += "data-path='"+obj.uploadPath+"' data-uuid='"+obj.uuid+"' data-filename='"+obj.fileName+"' data-type='"+obj.image+"' ><div>";
+				str += "<span> "+ obj.fileName+"</span>";
+				str += "<button type='button' data-file=\'"+fileCallPath+"\' data-type='file' " 
+				str += "class='btn btn-warning btn-circle'><i class='fa fa-times'></i></button><br>";
+				str += "<img src='/resources/img/attach.png'></a>";
+				str += "</div>";
+				str +"</li>";
+			}
+		});
+
+		uploadResult.append(str);
+	}
+	
+	
+});
+
+
+$(".uploadResult").on("click", "button" , function(e){
+
+	console.log("delete file");
+
+	var targetFile = $(this).data("file");
+	var type = $(this).data("type");
+
+	var targetLi = $(this).closest("li");
+
+	$.ajax({
+		url: '/deleteFile',
+		data: {fileName: targetFile, type:type},
+		dataType:'text',
+		type:'POST',
+		success: function(result){
+			alert(result);
+			targetLi.remove();
+		}
 	});
 });
+
+
+
+
 </script>
 <%@include file="../includes/footer.jsp"%>
